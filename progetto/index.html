@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title> INDEX</title>
+  </head>
+  <body>  
+  <script>
+    // Fetch API
+    function caricaFile() {
+      const dateTime = new Date();
+      timestamp = Math.floor(dateTime / 1000);
+
+      console.log('http://localhost/progetto/riscatto.php?timestamp=' + timestamp);
+      fetch('http://localhost/progetto/riscatto.php?timestamp=' + timestamp)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+    }
+
+    function convertiJson() {
+      let btc = caricaFile();
+      console.log(btc);
+    }
+    
+    //setTimer lo fa una sola volta 
+    setInterval(() => {
+      // console.log('http://localhost:8080/www/riscatto.php');
+      console.log(caricaFile());
+    }, 60000);
+
+    console.log(caricaFile());
+    console.log('<a href="http://localhost/progetto/generatoreqrcode.php"> </a>');
+  </script>
+    
+  
+  </body>
+</html>

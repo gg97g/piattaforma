@@ -1,0 +1,32 @@
+{
+    "name": "giuseppetti/progetto",
+    "description": "Piattaforma per la generazione di voucher",
+    "keywords": ["PHP","tesi","WOM"],
+    "minimum-stability": "dev",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Giorgia Giuseppetti",
+            "email": "g.giuseppetti@campus.uniurb.it",
+            "homepage": "https://github.com/gg97g",
+            "role": "Student"      
+        }
+      ],
+      "autoload": {
+        "psr-4": {
+          "WOM\\": "src/"
+        }
+    },
+    "require": {
+        "digitsrl/php-wom-connector": "9999999-dev",
+        "php": "^7.0",
+        "monolog/monolog": "^2.1",
+        "guzzlehttp/guzzle": "~6.0",
+        "ext-json": "*",
+        "ramsey/uuid": "^4.0",
+        "ext-openssl": "*",
+        "phpseclib/phpseclib": "^2.0",
+        "endroid/qr-code": "^3.8"
+    }
+
+}

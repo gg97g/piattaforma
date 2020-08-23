@@ -1,0 +1,26 @@
+*{
+  margin: 5px;
+  padding: 3px;
+  text-decoration: none;
+  background: #bdc3c7;
+}
+
+body{
+  min-height: 100vh;
+  background: #bdc3c7;
+}
+
+.box{
+  height: 100%;
+  width: 100%;
+  background: #bdc3c7;
+}
+
+.box img{
+  text-align: center;
+}
+
+
+@media (min-device-width : 320px) and (max-device-width : 480px){
+/* Smartphone  */
+}
