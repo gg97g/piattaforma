@@ -6,21 +6,24 @@
 </style>
   </head>
   <body>
-    <button id="link" onclick="caricaFile()">Riscatta il tuo voucher</button>
-  <script>
-    // Fetch API
-    function caricaFile() {
+    <div align="center">
+      <img id="link" onclick="caricaFile()" src="vouchers.png" alt="Mia Immagine">
+      </div>
+      <script>
+      // Fetch API
+      function caricaFile() {
       const dateTime = new Date();
       timestamp = Math.floor(dateTime / 1000);
-      //var container = document.getElementById("link"); 
-      //var link = "http://localhost/progetto/generatoreqrcode.php";
-
+      var img = "voucher.png";
+        
+      
       console.log('http://localhost/progetto/riscatto.php?timestamp=' + timestamp);
       fetch('http://localhost/progetto/riscatto.php?timestamp=' + timestamp)
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        document.getElementById("link").setAttribute('onclick', 'location.href = "http://localhost/progetto/generatoreqrcode.php"');
+        document.body.appendChild(img);
+        //document.getElementById("link").setAttribute('onclick', 'location.href = "http://localhost/progetto/generatoreqrcode.php"');
         //document.getElementById("link").href = "http://localhost/progetto/generatoreqrcode.php";
         //container.innerHTML = '<a href=" link "> http://localhost/progetto/generatoreqrcode.php</a>';
         //document.write('http://localhost/progetto/generatoreqrcode.php');
@@ -28,19 +31,17 @@
         //http://localhost/progetto/generatoreqrcode.php
         //<button id= "link" onclick="prendiLink();"> Riscatta il tuo voucher </button>
         return data;
-        return container; 
       })      
     }
     async function convertiJson() {
       let btc = caricaFile();
       console.log(btc);
     }
-    
     //setTimer lo fa una sola volta 
     setInterval(() => {
       //console.log('http://localhost/progetto/generatoreqrcode.php');
       console.log(caricaFile());
-    }, 60000);
+    }, 6000);
 
     console.log(caricaFile());
   </script>
