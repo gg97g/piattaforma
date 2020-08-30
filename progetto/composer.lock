@@ -61,16 +61,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.8.16",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "edffaf98c06459b11dc1843e499bfea2aaf78754"
+                "reference": "283a40c901101e66de7061bd359252c013dcc43c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/edffaf98c06459b11dc1843e499bfea2aaf78754",
-                "reference": "edffaf98c06459b11dc1843e499bfea2aaf78754",
+                "url": "https://api.github.com/repos/brick/math/zipball/283a40c901101e66de7061bd359252c013dcc43c",
+                "reference": "283a40c901101e66de7061bd359252c013dcc43c",
                 "shasum": ""
             },
             "require": {
@@ -105,7 +105,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.8.16"
+                "source": "https://github.com/brick/math/tree/master"
             },
             "funding": [
                 {
@@ -113,7 +113,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-18T08:59:30+00:00"
+            "time": "2020-08-18T23:57:15+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -579,12 +579,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f9eee5cec93dfb313a38b6b288741e84e53f02d5"
+                "reference": "bbe10b1e28aedde9a28bf7b7cedea622ddddc3ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f9eee5cec93dfb313a38b6b288741e84e53f02d5",
-                "reference": "f9eee5cec93dfb313a38b6b288741e84e53f02d5",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bbe10b1e28aedde9a28bf7b7cedea622ddddc3ba",
+                "reference": "bbe10b1e28aedde9a28bf7b7cedea622ddddc3ba",
                 "shasum": ""
             },
             "require": {
@@ -655,7 +655,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.1.1"
+                "source": "https://github.com/Seldaek/monolog/tree/master"
             },
             "funding": [
                 {
@@ -667,7 +667,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-23T08:41:23+00:00"
+            "time": "2020-08-23T11:42:45+00:00"
         },
         {
             "name": "myclabs/php-enum",
@@ -772,12 +772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "f0710fc77ee9af6a1989dea2449921f5d4404dbf"
+                "reference": "a25d4980f1244d9e288714c6540a99f8c9e1e612"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/f0710fc77ee9af6a1989dea2449921f5d4404dbf",
-                "reference": "f0710fc77ee9af6a1989dea2449921f5d4404dbf",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/a25d4980f1244d9e288714c6540a99f8c9e1e612",
+                "reference": "a25d4980f1244d9e288714c6540a99f8c9e1e612",
                 "shasum": ""
             },
             "require": {
@@ -786,7 +786,6 @@
             "require-dev": {
                 "phing/phing": "~2.7",
                 "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
-                "sami/sami": "~2.0",
                 "squizlabs/php_codesniffer": "~2.0"
             },
             "suggest": {
@@ -874,7 +873,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-17T12:29:12+00:00"
+            "time": "2020-08-21T17:35:49+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1104,16 +1103,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "69b3eb8824546bf2c06211fcf2ef630effa5ec49"
+                "reference": "e4562b089b874f9026e9b84a6ca0e9634a22218f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/69b3eb8824546bf2c06211fcf2ef630effa5ec49",
-                "reference": "69b3eb8824546bf2c06211fcf2ef630effa5ec49",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/e4562b089b874f9026e9b84a6ca0e9634a22218f",
+                "reference": "e4562b089b874f9026e9b84a6ca0e9634a22218f",
                 "shasum": ""
             },
             "require": {
-                "brick/math": "^0.8",
+                "brick/math": "^0.8 || ^0.9",
                 "ext-json": "*",
                 "php": "^7.2 || ^8",
                 "ramsey/collection": "^1.0",
@@ -1189,7 +1188,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-07-28T16:52:54+00:00"
+            "time": "2020-08-23T20:04:10+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2079,18 +2078,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "602c3c480f74fc9ae5de94425436af7fb60bffea"
+                "reference": "675828a014e896d6d0ff0427521fca5efee4834b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/602c3c480f74fc9ae5de94425436af7fb60bffea",
-                "reference": "602c3c480f74fc9ae5de94425436af7fb60bffea",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/675828a014e896d6d0ff0427521fca5efee4834b",
+                "reference": "675828a014e896d6d0ff0427521fca5efee4834b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
                 "symfony/polyfill-php80": "^1.15",
-                "symfony/property-info": "^5.1.1"
+                "symfony/property-info": "^5.2"
             },
             "require-dev": {
                 "symfony/cache": "^4.4|^5.0"
@@ -2157,7 +2157,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-17T07:50:35+00:00"
+            "time": "2020-08-30T08:30:09+00:00"
         },
         {
             "name": "symfony/property-info",
@@ -2165,16 +2165,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-info.git",
-                "reference": "9ba67b2b65177821478cffb9c4daef2bfdb7d44a"
+                "reference": "5aba5b80eb61b3faa6875672a3054bbdc8669bec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-info/zipball/9ba67b2b65177821478cffb9c4daef2bfdb7d44a",
-                "reference": "9ba67b2b65177821478cffb9c4daef2bfdb7d44a",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/5aba5b80eb61b3faa6875672a3054bbdc8669bec",
+                "reference": "5aba5b80eb61b3faa6875672a3054bbdc8669bec",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
                 "symfony/polyfill-php80": "^1.15",
                 "symfony/string": "^5.1"
             },
@@ -2252,7 +2253,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-18T21:19:34+00:00"
+            "time": "2020-08-26T07:35:07+00:00"
         },
         {
             "name": "symfony/string",
