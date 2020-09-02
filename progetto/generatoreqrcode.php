@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title> Qrcode </title>
-  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style_qrcode.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/all.css">
   <script src="https://kit.fontawesome.com/abc1566418.js" crossorigin="anonymous"></script>
@@ -16,7 +16,7 @@
       <i class="fas fa-ellipsis-h"></i>
     </label>
     <ul class="menu">
-      <a href="https://wom.social/">About</a>
+      <a href="https://wom.social/" onclick="send()">About</a>
       <a href="#">Contact</a>
       <label for="chk" class="hide-menu-btn">
         <i class="fas fa-times"></i>
@@ -80,9 +80,34 @@
               \WOM\WOMQRCodeGenerator::GetQRCode($otc, 300, "vouchers.png");
             }catch(Exception $exception) {
               echo "No voucher generated :(";
-            } 
+            }
             
+            function send(){
+            // definisco mittente e destinatario della mail
+            $nome_mittente = "Giorgia";
+            $mail_mittente = "giuseppettigiorgia97@gmail.com";
+            $mail_destinatario = "g.giuseppetti@campus.uniurb.it";
+
+            // definisco il subject ed il body della mail
+            $mail_oggetto = "Messaggio di prova";
+            $mail_corpo = "Questo è un messaggio di prova per testare la mia applicazione";
+
+            // aggiusto un po' le intestazioni della mail
+            // E' in questa sezione che deve essere definito il mittente (From)
+            // ed altri eventuali valori come Cc, Bcc, ReplyTo e X-Mailer
+            $mail_headers = "From: " .  $nome_mittente . " <" .  $mail_mittente . ">\r\n";
+            $mail_headers .= "Reply-To: " .  $mail_mittente . "\r\n";
+            $mail_headers .= "X-Mailer: PHP/" . phpversion();
+
+            if (mail($mail_destinatario, $mail_oggetto, $mail_corpo, $mail_headers)){
+              echo "Messaggio inviato con successo a " . $mail_destinatario;
+            }else{
+              echo "Errore. Nessun messaggio inviato.";
+            }
+            
+          }
           ?>
+          
           <div class="img">
             <img src="vouchers.png"/>
           </div>

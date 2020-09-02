@@ -1,20 +1,17 @@
 <?php include 'db.php' ?>
 <?php
-function ok(){
-  require "sendEmail.php";
+
 if(isset($_POST['submit'])){
   $email = $_POST['email'];
-  
 }
-}
-?>
 
+?>
 <!DOCTYPE html>
 <html lang='it' dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title> LOGIN</title>
-  <link rel="stylesheet" href="style.css">
+  <title> LOGIN </title>
+  <link rel="stylesheet" href="style_login.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/all.css">
   <script src="https://kit.fontawesome.com/abc1566418.js" crossorigin="anonymous"></script>
@@ -43,20 +40,11 @@ if(isset($_POST['submit'])){
       <input type="email" id="email" placeholder="Inserisci la tua Email" name="email">
       
     </div>
-    <button class="button" type="submit" onclick="ok()"  name="login">Login</button>
+    <button class="button" type="submit" name="login">Login</button>
   </div>
 </form>
   
   
-<!--<div class="box">
-  <form action="accesso.php" method="post">
-    <div class= "form-group">
-      <input type="text" class="form-control" id="email" placeholder="Inserisci la tua Email" name="email">
-    </div>
-    <button type="submit" onclick="ok()"  name="login">Login</button>
-  </form>
-</div>-->
-
 </body>
 
 </html>

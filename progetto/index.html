@@ -1,27 +1,41 @@
-<html>
-  <head>
-    <title> INDEX</title>
-    <style>
-    body {background-color: powderblue;}
-</style>
+<html lang='it' dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>INDEX</title>
+  <link rel="stylesheet" href="style_index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/all.css">
+  <script src="https://kit.fontawesome.com/abc1566418.js" crossorigin="anonymous"></script>
   </head>
   <body>
-     <div align="center">
-       <img src="page.png">
-     </div>
+  <div class="header">
+    <h2 class="logo"><pre></pre><img src="wom.png"></h2>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+    <ul class="menu">
+      <a href="https://wom.social/">About</a>
+      <a href="#">Contact</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+  
      <script>
       // Fetch API
       function caricaFile() {
       const dateTime = new Date();
       timestamp = Math.floor(dateTime / 1000);
-      var img = "page.png";
     
       console.log('http://localhost/progetto/riscatto.php?timestamp=' + timestamp);
       fetch('http://localhost/progetto/riscatto.php?timestamp=' + timestamp)
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        document.body.appendChild(img);
+        document.getElementById('qrcode');
+        
         return data;
       })      
     }
@@ -30,14 +44,21 @@
       let btc = caricaFile();
       console.log(btc);
     }
+      
     //setTimer lo fa una sola volta 
     setInterval(() => {
       //console.log('http://localhost/progetto/generatoreqrcode.php');
+      
       console.log(caricaFile());
-    }, 60000);
+    }, 6000);
 
     console.log(caricaFile());
   </script>
   
+  <div align="center">
+  <img src="vouchers.png" id="qrcode" onload="caricaFile()">
+  </div>
+  
 </body>
 </html>
+
