@@ -1,23 +1,47 @@
 <html lang='it' dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width" >
   <title> Qrcode </title>
   <link rel="stylesheet" href="style1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/all.css">
+  <script src="https://kit.fontawesome.com/abc1566418.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-
+  <div class="header">
+    <h2 class="logo"><pre></pre><img src="wom.png"></h2>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+    <ul class="menu">
+      <a href="https://wom.social/">About</a>
+      <a href="#">Contact</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+  
+  <div class="box">
+    <div class="content">
+      <pre> </pre>
+      <pre> </pre>
+    <h1> Benvenuta/o !
+      <p> Ora puoi riscattare il tuo Voucher. </p>
+      <p> Ti ricordo che il Pin che ti verrà </p>
+      <p> richiesto dopo la scansione l'hai </p>
+      <p>ricevuto via email. </p>
+      <p> Se non hai ricevuto nessuna email, <a href="http://localhost/progetto/login.php"> clicca qui. </a> </p> </h1>
+    </div>
     
-        <h1 style="color: #34495e;"> <p align="center">Qrcode <br> Ora puoi ricevere il tuo Voucher!!:) </br> </p></h1>
       
-        <div class="box">
-          <?php
-            if(isset($_GET['timestamp'])) {
-              $timestamp = $_GET['timestamp'];
-              $rv = array(
-              "secret" => hash_hmac('sha256', generaStringaRandom(128), $timestamp)
-            );
+      <?php
+      if(isset($_GET['timestamp'])) {
+        $timestamp = $_GET['timestamp'];
+        $rv = array(
+          "secret" => hash_hmac('sha256', generaStringaRandom(128), $timestamp));
             header('Content-Type: application/json');
             echo json_encode($rv);
           }
@@ -52,14 +76,16 @@
             $pin = null;
             try{
               $Instrument->RequestVouchers($vouchers,  "", $pin, $otc);
-              echo "Otc: {$otc} Pin:{$pin}";
+              //echo "Otc: {$otc} Pin:{$pin}";
               \WOM\WOMQRCodeGenerator::GetQRCode($otc, 300, "vouchers.png");
             }catch(Exception $exception) {
               echo "No voucher generated :(";
             } 
-
+            
           ?>
+          <div class="img">
             <img src="vouchers.png"/>
+          </div>
         </div>
       </body>
       </html>
