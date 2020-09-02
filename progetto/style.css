@@ -1,102 +1,164 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: "montserrat", sans-serif;
+  background-size: cover;
+}
+
+.header{
+  height: 100px;
+  background: #f8f9fa;
+  padding: 0 20px;
+  color: #EEE0E5	;
+}
+
+.logo{
+  line-height: 100px;
+  float: left;
+  text-transform: uppercase;  
+}
+
+.menu{
+  float: right;
+  line-height: 100px;  
+}
+
+.menu a{
+  color: #EEE0E5;
+  text-transform: uppercase;
   text-decoration: none;
-  font-family: montserrat;
-  box-sizing: border-box;
+  padding: 0 10px;
+  transition: 0.4s;
 }
 
-body{
-  min-height: 100vh;
-  background-image: linear-gradient(120deg,#16a085,#1abc9c);
+.show-menu-btn,.hide-menu-btn{
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
 }
-.login-form{
-  width: 360px;
+
+.show-menu-btn{
+  float: right;
+  
+}
+.show-menu-btn i{
+  line-height: 100px;
+}
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+  color: #3498db;
+}
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;  
+}
+  
+.contact-form{
+  width: 85%;
+  max-width: 600px;
   background: #f1f1f1;
-  height: 580px;
-  padding: 80px 40px;
-  border-radius: 10px;
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.login-form h1{
+  transform: translate(-50%,-50%);
+  padding: 30px 40px;
+  box-sizing: border-box;
+  border-radius: 8px;
   text-align: center;
-  margin-bottom: 60px;
+  box-shadow: 0 0 20px #000000b3;
+  font-family: "Montserrat", sans-serif;  
 }
 
-.txt{
-  border-bottom: 2px solid #adadad;
-  position: relative;
-  margin: 30px 0;
+.contact-form h1{
+  margin-top: 0;
+  font-weight: 200;
 }
 
-.txt input{
-  font-size: 15px;
-  color: #000000;
-  border: none;
-  width: 100%;
-  outline: none;
-  background: none;
-  padding: 0 5px;
-  height: 40px;
+.txtb{
+  border: 1px solid gray;
+  margin: 8px 0;
+  padding: 12px 18px;
+  border-radius: 8px;
 }
 
-.txt span::before{
-  content: attr(data-placeholder);
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  color: #adadad;
-  transform: translateY(-50%);
-  z-index: -1;
-  transition: .5s;
-}
-
-.txt span::after{
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(120deg,#16a085,#1abc9c);
-  transition: .5s;
-}
-
-.focus + span::before{
-  top: -5px;
-}
-
-.focus + span::after{
-  width: : 100%;
-}
-
-.logbutton{
+.txtb label{
   display: block;
+  text-align: left;
+  color: #333;  
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.txtb input,.txtb textarea{
   width: 100%;
-  height: 50px;
   border: none;
-  background:  linear-gradient(120deg,#16a085,#1abc9c);
-  background-size: 200%;
-  color: #fff;
+  background: none;
   outline: none;
-  cursor: .5s;
+  font-size: 18px;
+  margin-top: 6px;
 }
 
-.logbutton:hover{
-  background-position: right;
+.button{
+ display: inline-block;
+ text-align: center;
+ white-space: nowrap;
+ color: #515151;
+ text-decoration: none;
+ line-height: 1.2;
+ font-weight: normal;
+ font-family: sans-serif;
+ font-size: 18px;
+ background-color: #CFCBE6;
+ border-radius: 24px;
+ padding: 11px 40px;
+ border: 0px solid #CFCBE6;
+ cursor: pointer;
+}
+.btn-toolset:hover {
+ background-color: #99A7B3;
+ border-color: #99A7B3;
+}
+.btn-toolset > strong {
+ font-size: 24px;
+}
 }
 
-.btn input{
-  text-align: center;
-  align: center;
-  color: #fff;
-  padding: 20px 40px;
-  border: solid 1px #008080;
-  background: linear-gradient(120deg,#16a085,#1abc9c);
-}
+ 
 
-@media (min-device-width : 320px) and (max-device-width : 480px){
-/* Smartphone  */
+
+
+
+@media screen and (max-width : 800px){
+  .show-menu.btn,.hide-menu-btn{
+    display: block;
+  }
+  .menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+  }
+  .menu a{
+    display: block;
+    padding: 20px;    
+  }
+  .hide-menu.btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  #chk:checked ~ .menu{
+    right: 0;
+  }
+
 }
