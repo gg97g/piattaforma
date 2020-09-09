@@ -3,9 +3,25 @@
 
 if(isset($_POST['submit'])){
   $email = $_POST['email'];
+  if(mail($_POST['email'])){
+    echo "MAIL send";
+ }else{
+   echo "Failed";
 }
 
+}
+
+
+
+//$from_name = "Giorgia"; //da chi arriva l'email
+//$to_email = $_POST['mail'];
+//$object = "";
+//$message = "Sono una bambola";
+
+//echo $from_name.'|'.$to_email.'|'.$object.'|'.$message;
 ?>
+
+
 <!DOCTYPE html>
 <html lang='it' dir="ltr">
 <head>
@@ -40,7 +56,12 @@ if(isset($_POST['submit'])){
       <input type="email" id="email" placeholder="Inserisci la tua Email" name="email">
       
     </div>
-    <button class="button" type="submit" name="login">Login</button>
+      <div class="txtb">
+      <label><i class="far fa-calendar-alt"></i> Evento :</label>
+      <input type="evento" id="evento" placeholder="A quale evento hai partecipato?" name="evento">
+      
+    </div>
+    <button class="button" action="generatoreqrcode.php" onclick="" type="submit" name="login">Login</button>
   </div>
 </form>
   

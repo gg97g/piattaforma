@@ -1,3 +1,18 @@
+<?php include 'db.php' ?>
+
+<?php
+$to_email = "g.giuseppetti@campus.uniurb.it";
+$subject = "Riscatto WOM";
+$body = "Salve,ora puoi riscattare il tuo WOM. I codici sono: OTC: 8f3013de-5337-4f8c-86f0-ca4321f6d792 , PIN: 3945";
+$headers = "From: giuseppettigiorgia97@gmail.com";
+
+if (mail($to_email, $subject, $body, $headers)) {
+    echo "Email successfully sent to $to_email...";
+} else {
+  echo "Email sending failed...";
+}
+?>
+
 <html lang='it' dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -10,13 +25,13 @@
 </head>
 <body>
   <div class="header">
-    <h2 class="logo"><pre></pre><img src="wom.png"></h2>
+    <h2 class="logo"><pre></pre><img src="wom.png" ></h2>
     <input type="checkbox" id="chk">
     <label for="chk" class="show-menu-btn">
       <i class="fas fa-ellipsis-h"></i>
     </label>
     <ul class="menu">
-      <a href="https://wom.social/" onclick="send()">About</a>
+      <a href="https://wom.social/">About</a>
       <a href="#">Contact</a>
       <label for="chk" class="hide-menu-btn">
         <i class="fas fa-times"></i>
@@ -33,7 +48,7 @@
       <p> Ti ricordo che il Pin che ti verrà </p>
       <p> richiesto dopo la scansione l'hai </p>
       <p>ricevuto via email. </p>
-      <p> Se non hai ricevuto nessuna email, <a href="http://localhost/progetto/login.php"> clicca qui. </a> </p> </h1>
+      <p> Se non hai ricevuto nessuna email, <a href="http://localhost/progetto/login.php" onclick="sendMail()"> clicca qui. </a> </p> </h1>
     </div>
     
       
@@ -82,35 +97,13 @@
               echo "No voucher generated :(";
             }
             
-            function send(){
-            // definisco mittente e destinatario della mail
-            $nome_mittente = "Giorgia";
-            $mail_mittente = "giuseppettigiorgia97@gmail.com";
-            $mail_destinatario = "g.giuseppetti@campus.uniurb.it";
-
-            // definisco il subject ed il body della mail
-            $mail_oggetto = "Messaggio di prova";
-            $mail_corpo = "Questo è un messaggio di prova per testare la mia applicazione";
-
-            // aggiusto un po' le intestazioni della mail
-            // E' in questa sezione che deve essere definito il mittente (From)
-            // ed altri eventuali valori come Cc, Bcc, ReplyTo e X-Mailer
-            $mail_headers = "From: " .  $nome_mittente . " <" .  $mail_mittente . ">\r\n";
-            $mail_headers .= "Reply-To: " .  $mail_mittente . "\r\n";
-            $mail_headers .= "X-Mailer: PHP/" . phpversion();
-
-            if (mail($mail_destinatario, $mail_oggetto, $mail_corpo, $mail_headers)){
-              echo "Messaggio inviato con successo a " . $mail_destinatario;
-            }else{
-              echo "Errore. Nessun messaggio inviato.";
-            }
-            
-          }
-          ?>
-          
-          <div class="img">
+            ?>
+            <div class="img">
             <img src="vouchers.png"/>
           </div>
         </div>
       </body>
       </html>
+      
+      
+    

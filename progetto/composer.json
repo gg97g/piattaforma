@@ -26,7 +26,8 @@
         "ramsey/uuid": "^4.0",
         "ext-openssl": "*",
         "phpseclib/phpseclib": "^2.0",
-        "endroid/qr-code": "^3.8"
+        "endroid/qr-code": "^3.8",
+        "sendgrid/sendgrid": "~7"
     }
 
 }
