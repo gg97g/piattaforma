@@ -1,17 +1,6 @@
 <?php include 'db.php' ?>
+<?php include 'sendMail.php' ?>
 
-<?php
-$to_email = "g.giuseppetti@campus.uniurb.it";
-$subject = "Riscatto WOM";
-$body = "Salve,ora puoi riscattare il tuo WOM. I codici sono: OTC: 8f3013de-5337-4f8c-86f0-ca4321f6d792 , PIN: 3945";
-$headers = "From: giuseppettigiorgia97@gmail.com";
-
-if (mail($to_email, $subject, $body, $headers)) {
-    echo "Email successfully sent to $to_email...";
-} else {
-  echo "Email sending failed...";
-}
-?>
 
 <html lang='it' dir="ltr">
 <head>
@@ -45,10 +34,9 @@ if (mail($to_email, $subject, $body, $headers)) {
       <pre> </pre>
     <h1> Benvenuta/o !
       <p> Ora puoi riscattare il tuo Voucher. </p>
-      <p> Ti ricordo che il Pin che ti verrà </p>
-      <p> richiesto dopo la scansione l'hai </p>
-      <p>ricevuto via email. </p>
-      <p> Se non hai ricevuto nessuna email, <a href="http://localhost/progetto/login.php" onclick="sendMail()"> clicca qui. </a> </p> </h1>
+      <p> Mi raccomando, ricordati il Pin </p>
+      <p> che ti verrà richiesto dopo</p>
+      <p> la scansione.  </p>
     </div>
     
       
@@ -91,7 +79,8 @@ if (mail($to_email, $subject, $body, $headers)) {
             $pin = null;
             try{
               $Instrument->RequestVouchers($vouchers,  "", $pin, $otc);
-              //echo "Otc: {$otc} Pin:{$pin}";
+              echo "Pin:{$pin}";
+              //Otc: {$otc} 
               \WOM\WOMQRCodeGenerator::GetQRCode($otc, 300, "vouchers.png");
             }catch(Exception $exception) {
               echo "No voucher generated :(";
