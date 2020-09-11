@@ -79,8 +79,8 @@
             $pin = null;
             try{
               $Instrument->RequestVouchers($vouchers,  "", $pin, $otc);
-              echo "Pin:{$pin}";
-              //Otc: {$otc} 
+              //echo "Otc: {$otc}" "Pin:{$pin}";
+              
               \WOM\WOMQRCodeGenerator::GetQRCode($otc, 300, "vouchers.png");
             }catch(Exception $exception) {
               echo "No voucher generated :(";

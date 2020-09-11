@@ -22,6 +22,30 @@
       </label>
     </ul>
   </div>
+  <div class="immagine" align="center"> <img src="qr1.png" id="img"> </div>
+  <script language="Javascript" type="text/javascript">
+      var secondi=1;
+      var num=0;
+      function Caricaqr() {
+	    var immagini=new Array();
+	    immagini[0]="qr1.png";
+      immagini[1]="qr2.png";
+      immagini[2]="qr3.png";
+      immagini[3]="qr4.png";
+	    immagini[4]="qr5.png";
+      immagini[5]="qr6.png";
+      immagini[6]="qr7.png";
+      immagini[7]="qr8.png";
+      immagini[8]="qr9.png";
+      immagini[9]="qr10.png";
+    
+	document.getElementById("img").src=immagini[num];
+	num=(num+1>=immagini.length)?0:num+1;
+	setTimeout("Caricaqr()",secondi*60000);
+}	
+Caricaqr();
+</script>
+
 
   
      <script>
@@ -49,16 +73,10 @@
     setInterval(() => {
       //console.log('http://localhost/progetto/generatoreqrcode.php');
       console.log(caricaFile());
-    }, 6000);
+    }, 60000);
 
     console.log(caricaFile());
-  </script>
-  
-  <div align="center">
-  <img id="img" src="vouchers.png" onChange="caricaFile()">
-  <h3> <a href = "http://localhost/progetto/login.php"> Accedi alla pagina di Login </a> </h3>
-</div>
-  
+  </script>  
 </body>
 </html>
 
